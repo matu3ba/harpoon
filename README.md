@@ -1,5 +1,3 @@
-<div align="center">
-
 # Harpoon
 Fork of to be eventually rewritten https://github.com/ThePrimeagen/harpoon
 adjusted for more ~~allowing yourself to shoot in your foot~~ direct control of things.
@@ -137,3 +135,9 @@ lua require("harpoon.term").getBufferTerminalId(1)
 
 This allows lua code to do things like movements, which I find convenient ie for
 sending `G` after sending `!!` for a command.
+
+## ⇁ Social
+For questions about Harpoon, there's a #harpoon channel on [the Primagen's Discord](https://discord.gg/theprimeagen) server.
+* [Discord](https://discord.gg/theprimeagen)
+* [Twitch](https://www.twitch.tv/theprimeagen)
+* [Twitter](https://twitter.com/ThePrimeagen)
