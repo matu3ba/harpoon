@@ -1,35 +1,9 @@
 <div align="center">
 
 # Harpoon
-##### Getting you where you want with the fewest keystrokes.
-
-[![Lua](https://img.shields.io/badge/Lua-blue.svg?style=for-the-badge&logo=lua)](http://www.lua.org)
-[![Neovim](https://img.shields.io/badge/Neovim%200.5+-green.svg?style=for-the-badge&logo=neovim)](https://neovim.io)
-</div>
-
-![Harpoon](harpoon.png)
--- image provided by **Bob Rust**
-
-
-## ⇁  WIP
-This is not fully baked, though used by several people. If you experience any
-issues, see some improvement you think would be amazing, or just have some
-feedback for harpoon (or me), make an issue!
-
-
-## ⇁ The Problems:
-1. You're working on a codebase. medium, large, tiny, whatever. You find
-yourself frequenting a small set of files and you are tired of using a fuzzy finder,
-`:bnext` & `:bprev` are getting too repetitive, alternate file doesn't quite cut it, etc etc.
-1. You want to execute some project specific commands or have any number of
-persistent terminals that can be easily navigated to.
-
-
-## ⇁  The Solutions:
-1. The ability to specify, or on the fly, mark and create persisting key strokes
-to go to the files you want.
-1. Unlimited terminals and navigation.
-
+Fork of to be eventually rewritten https://github.com/ThePrimeagen/harpoon
+adjusted for more ~~allowing yourself to shoot in your foot~~ direct control of things.
+See "More Power".
 
 ## ⇁ Installation
 * neovim 0.5.0+ required
