@@ -148,64 +148,18 @@ global_settings = {
 }
 ```
 
-
-### Preconfigured Terminal Commands
-to preconfigure terminal commands for later use
+### More Power
+Work on underlying buffer and terminal ids to ~~not~~ utterly break things:
 ```lua
-projects = {
-    -- Yes $HOME works
-    ["$HOME/personal/vim-with-me/server"] = {
-        term = {
-            cmds = {
-                "./env && npx ts-node src/index.ts"
-            }
-        }
-    }
-}
+lua require("harpoon.ui").getBufferId(1)
+lua require("harpoon.term").getBufferTerminalId(1)
+-- :lua = require("harpoon.term").getBufferTerminalId(1)
+-- Returns:
+-- {
+--   buf_id = 7,
+--   term_id = 8
+-- }
 ```
 
-## ⇁ Logging
-- logs are written to `harpoon.log` within the nvim cache path (`:echo stdpath("cache")`)
-- available log levels are `trace`, `debug`, `info`, `warn`, `error`, or `fatal`. `warn` is default
-- log level can be set with `vim.g.harpoon_log_level` (must be **before** `setup()`)
-- launching nvim with `HARPOON_LOG=debug nvim` takes precedence over `vim.g.harpoon_log_level`.
-- invalid values default back to `warn`.
-
-## ⇁ Others
-#### How do Harpoon marks differ from vim global marks
-they serve a similar purpose however harpoon marks differ in a few key ways:
-1. They auto update their position within the file
-1. They are saved _per project_.
-1. They can be hand edited vs replaced (swapping is easier)
-
-#### The Motivation behind Harpoon terminals
-1. I want to use the terminal since I can gF and <c-w>gF to any errors arising
-from execution that are within the terminal that are not appropriate for
-something like dispatch. (not just running tests but perhaps a server that runs
-for X amount of time before crashing).
-1. I want the terminal to be persistent and I can return to one of many terminals
-with some finger wizardry and reparse any of the execution information that was
-not necessarily error related.
-1. I would like to have commands that can be tied to terminals and sent them
-without much thinking. Some sort of middle ground between vim-test and just
-typing them into a terminal (configuring netflix's television project isn't
-quite building and there are tons of ways to configure).
-
-#### Use a dynamic width for the Harpoon popup menu
-Sometimes the default width of `60` is not wide enough.
-The following example demonstrates how to configure a custom width by setting
-the menu's width relative to the current window's width.
-
-```lua
-require("harpoon").setup({
-    menu = {
-        width = vim.api.nvim_win_get_width(0) - 4,
-    }
-})
-```
-
-## ⇁ Social
-For questions about Harpoon, there's a #harpoon channel on [the Primagen's Discord](https://discord.gg/theprimeagen) server.  
-* [Discord](https://discord.gg/theprimeagen)
-* [Twitch](https://www.twitch.tv/theprimeagen)
-* [Twitter](https://twitter.com/ThePrimeagen)
+This allows lua code to do things like movements, which I find convenient ie for
+sending `G` after sending `!!` for a command.
